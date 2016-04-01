@@ -18,9 +18,10 @@ Ext.define('Sipen.view.items.ItemsController', {
     				title: record ? 'Edit ' + record.get('item_name') : 'Add Item'
     			},
     			links: {
-    				currentItem: record || Ext.create('Sipen.model.Items', {
-                        '_id': 0
-                    })
+    				currentItem: {
+    					type: 'Items',
+    					'id': record ? record.id : 0
+    				}
     			}
 			}
 		});

@@ -36,7 +36,9 @@ Ext.define('Sipen.model.Base', {
             },
             listeners: {
                 exception: function(proxy, response, operation) {
-                    Sipen.util.Util.showErrorMsg(response.statusText);
+                    var respon = Sipen.util.Util.decodeJSON(response.responseText);
+                    if(!respon.success)
+                        Sipen.util.Util.showErrorMsg(respon.message);
                 }
             }
         }

@@ -2,7 +2,7 @@ Ext.define('Sipen.view.items.ItemsForm', {
 	extend: 'Ext.window.Window',
 	xtype: 'items-form',
 
-	height: 250,
+	height: 430,
 	width: 500,
 
 	layout: { type: 'fit' },
@@ -51,24 +51,60 @@ Ext.define('Sipen.view.items.ItemsForm', {
 						},
 						{
 							xtype: 'numberfield',
-							minValue: 1,
+							minValue: 0,
 							fieldLabel: 'Price',
 							name: 'item_price',
-							bind: '{currentItem.item_price}'
+							bind: {
+				                value: '{currentItem.item_price}'
+				            },
 						},
 						{
 							xtype: 'combo',
 						    name: 'type',
 							fieldLabel: 'Type',
-						    valueField: 'type_name',
+						    valueField: '_id',
 						    displayField: 'type_name',
 						    queryMode: 'local',
 						    forceSelection: true,
-						    submitValue: true,
 						    bind: {
-						    	value: '{currentItem.type_name}',
+						    	value: '{currentItem.type_id}',
 						    	store: '{typeItems}'
 						    }
+						},
+						{
+							xtype: 'radiogroup',
+					        fieldLabel: 'Item Status',
+							viewModel: {
+								formulas: {
+									radioValue: {
+										bind: '{currentItem.item_status}',
+									    get: function(value) {
+									    	return {
+												item_status: value
+									    	};
+										},
+										set: function(value) {
+											this.set('currentItem.item_status', value.item_status);
+										}
+									}
+							    }
+						    },
+							bind: {
+				                value: '{radioValue}'
+				            },
+					        items: [
+					            { boxLabel: 'For sale', name: 'item_status', inputValue: 'for_sale'},
+					            { boxLabel: 'Not for sale', name: 'item_status', inputValue: 'not_for_sale'}
+					        ]
+				        },
+						{
+							xtype: 'textareafield',
+							allowBlank: true,
+							name: 'item_description',
+							fieldLabel: 'Description',
+							grow: true,
+							anchor: '100%',
+							bind: '{currentItem.item_description}'
 						}
 					]
 				}

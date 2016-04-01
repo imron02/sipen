@@ -7,6 +7,8 @@ Ext.define('Sipen.model.Items', {
 		{ name: 'item_code', type: 'string' },
 		{ name: 'item_name', type: 'string' },
 		{ name: 'item_price', type: 'int' },
-		{ name: 'type_name', type: 'string' }
+		{ name: 'type', type: 'auto' },
+		{ name: 'item_status', type: 'string' },
+		{ name: 'item_description', type: 'string' }
 	]
 });
