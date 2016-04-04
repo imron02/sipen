@@ -13,7 +13,8 @@ Ext.define('Sipen.view.menu.AccordionModel', {
                     node: [
                         {text: 'Users', className: 'user', dataFa: 'user'},
                         {text: 'Tipe Item', className: 'type-items', dataFa: 'tag'},
-                        {text: 'Items', className: 'items', dataFa: 'database'}
+                        {text: 'Items', className: 'items', dataFa: 'database'},
+                        {text: 'Supplier', className: 'supplier', dataFa: 'group'},
                     ]
                 },
                 {

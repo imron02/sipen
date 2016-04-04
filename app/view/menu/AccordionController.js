@@ -6,7 +6,8 @@ Ext.define('Sipen.view.menu.AccordionController', {
         'Sipen.view.menu.Tree',
         'Sipen.view.security.User',
         'Sipen.view.items.TypeItems',
-        'Sipen.view.items.Items'
+        'Sipen.view.items.Items',
+        'Sipen.view.supplier.Suppliers',
     ],
 
     renderDynamicMenu: function(view, options) {
