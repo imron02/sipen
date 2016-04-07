@@ -40,7 +40,7 @@ Ext.define('Sipen.util.Util', {
                     me.showErrorMsg(action.response.responseText);
                     break;
                 case Ext.form.action.Action.SERVER_INVALID:
-                    me.showErrorMsg(result.data.message);
+                    me.showErrorMsg(result.message);
             }
         },
 
