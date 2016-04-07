@@ -2,8 +2,8 @@ Ext.define('Sipen.view.items.ItemsForm', {
 	extend: 'Ext.window.Window',
 	xtype: 'items-form',
 
-	height: 430,
-	width: 500,
+	height: 350,
+    width: 500,
 
 	layout: { type: 'fit' },
 	bind: {title: '{title}'},
