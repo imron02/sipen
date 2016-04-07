@@ -1,6 +1,6 @@
 Ext.define('Sipen.model.Base', {
     extend: 'Ext.data.Model',
-    
+
     requires: [
         'Sipen.util.Util'
     ],
