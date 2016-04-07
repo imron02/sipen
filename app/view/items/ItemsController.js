@@ -19,7 +19,7 @@ Ext.define('Sipen.view.items.ItemsController', {
     			},
     			links: {
     				currentItem: {
-    					type: 'Items',
+    					type: 'Sipen.model.Items',
     					'id': record ? record.id : 0
     				}
     			}
